@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>タッチパッド練習 - 数字を書こう！</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="floating-shapes" id="shapes"></div>
+    <div class="container">
+        <h1>タッチパッド練習 - 数字を書こう！</h1>
+        <div id="progress">問題: 1/5</div>
+        <div id="target">この数字を書いてください: <span id="currentTarget">?</span></div>
+        <canvas id="drawingCanvas" width="300" height="300"></canvas>
+        <div class="controls">
+            <button onclick="clearCanvas()">消す</button>
+            <button onclick="predict()">確認する</button>
+            <button onclick="nextQuestion()" id="nextButton" style="display: none;">次の問題へ</button>
+        </div>
+        <div id="result">結果: ?</div>
+    </div>
+
+    <div id="feedback" class="feedback"></div>
+    <div id="congratulations">
+        <h2>おめでとうございます！</h2>
+        <div class="star">⭐</div>
+        <p>全問正解です！</p>
+        <p>タッチパッドの使い方が上手になりましたね！</p>
+        <button onclick="restartQuiz()">もう一度挑戦する</button>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html> 
